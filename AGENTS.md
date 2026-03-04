@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This is a Python project using Pydantic for data modeling with a virtual environment (venv) and `requirements.txt`.
+Python project using Pydantic for data modeling with virtual environment (venv) and `requirements.txt`.
 
 ## Environment Setup
 
@@ -23,10 +23,15 @@ pip install -r requirements.txt
 └── opencode.json      # OpenCode configuration
 ```
 
+## OpenCode Configuration
+
+The project uses OpenCode with MCP filesystem server. Skills are located in `.opencode/skills/`.
+
 ## Build, Lint, and Test Commands
 
 ```bash
-# Install dev dependencies
+# Install dependencies
+pip install -r requirements.txt
 pip install pytest ruff mypy
 
 # Run all tests
@@ -135,12 +140,11 @@ src/
 ├── __init__.py
 ├── models/         # Data models (Pydantic)
 ├── services/       # Business logic
-└── utils/         # Utility functions
-tests/             # Test files (test_*.py)
-data/              # Input data
-output/            # Generated output
+└── utils/          # Utility functions
+tests/              # Test files (test_*.py)
+data/               # Input data
+output/             # Generated output
 requirements.txt
-requirements-dev.txt
 pyproject.toml
 ```
 
@@ -166,8 +170,8 @@ logger = logging.getLogger(__name__)
 
 ## Notes for AI Agents
 
-- New project - implement core functionality first
+- Implement core functionality first
 - All code should include type hints
 - Pydantic is available for data validation
-- No existing tests - write tests as you implement
 - Run lint/typecheck before committing
+- Never commit secrets or keys to the repository
